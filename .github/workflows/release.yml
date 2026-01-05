@@ -1,0 +1,78 @@
+name: release
+
+on:
+  pull_request:
+    branches: [staging]
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [staging]
+
+jobs:
+  validate-feed:
+    name: validate feed
+    runs-on: ubuntu-latest
+    steps:
+      - name: enforce branch rules
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            base="${{ github.event.pull_request.base.ref }}"
+            head="${{ github.event.pull_request.head.ref }}"
+          else
+            base="staging"
+            head="${{ github.ref_name }}"
+          fi
+
+          if [ "$base" = "staging" ] && [ "$head" != "development" ] && [ "$head" != "staging" ]; then
+            exit 1
+          fi
+
+      - name: fail
+        if: failure()
+        run: echo "::error title=invalid feed::only 'development' can be merged into 'staging'"
+
+      - name: pass
+        if: success()
+        run: echo "::notice title=valid feed::ready for release on push"
+
+  release:
+    name: semantic release
+    runs-on: ubuntu-latest
+    needs: validate-feed
+    if: github.event_name == 'push'
+    permissions:
+      contents: write
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: echo "::notice title=checkout complete::repository with full history fetched"
+
+      - name: setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.16.0'
+      - run: echo "::notice title=node.js ready::v22.16.0 activated"
+
+      - name: install pnpm
+        run: npm install -g pnpm
+      - run: echo "::notice title=pnpm installed::global installation complete"
+
+      - name: install dependencies
+        run: pnpm install
+      - run: echo "::notice title=dependencies installed::pnpm install completed"
+
+      - name: run semantic-release
+        run: pnpm exec semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: echo "::notice title=semantic-release running::analyzing commits and publishing..."
+
+      - name: release fail
+        if: failure()
+        run: echo "::error title=release failed::semantic-release encountered an error — check logs above"
+
+      - name: release pass
+        if: success()
+        run: echo "::notice title=release published successfully::new version tagged, changelog updated, and release created"
