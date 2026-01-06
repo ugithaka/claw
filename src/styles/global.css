@@ -43,6 +43,15 @@
     var(--color-light) 90%,
     var(--color-dark) 0%
   );
+
+  --size-2xs: 8px;
+  --size-xs: 16px;
+  --size-sm: 24px;
+  --size-md: 32px;
+  --size-lg: 48px;
+  --size-xl: 64px;
+  --size-2xl: 96px;
+  --size-3xl: 128px;
 }
 
 html[data-theme='light'] {
