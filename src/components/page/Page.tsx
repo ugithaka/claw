@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <div className={PageStyles.Page}>
       <Header className={HeaderStyles.Page} />
-      <Main className={MainStyles.Main} />
+      <Main className={MainStyles.Page} />
     </div>
   );
 }
