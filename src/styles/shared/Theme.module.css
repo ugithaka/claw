@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  background: var(--color-foreground);
+  background: var(--color-primary);
 }
 
 .Body {
