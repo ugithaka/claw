@@ -1,4 +1,5 @@
 import '@/styles/global.css';
+import { gantari } from '@fonts/dynamic';
 
 export default function RootLayout({
   children,
@@ -10,7 +11,7 @@ export default function RootLayout({
       lang='en'
       data-theme='system'
     >
-      <body>{children}</body>
+      <body className={gantari.className}>{children}</body>
     </html>
   );
 }
