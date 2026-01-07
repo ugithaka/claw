@@ -1,2 +1,3 @@
+export { default as useIcon } from '@/library/hooks/useIcon';
 export { default as useMode } from '@/library/hooks/useMode';
 export { default as useTheme } from '@/library/hooks/useTheme';
