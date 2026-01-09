@@ -30,6 +30,7 @@
 .Body p {
   font-weight: 700;
   font-size: 14px;
+  color: var(--color-primary);
 }
 
 .Body p::first-letter {
