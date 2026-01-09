@@ -9,4 +9,5 @@
 .Brand p {
   font-size: var(--size-sm);
   font-weight: 700;
+  color: var(--color-primary);
 }
