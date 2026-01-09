@@ -4,8 +4,8 @@
   --color-dark: #171717;
 
   /* 10:1 */
-  --color-primary-dark: #5e2066;
-  --color-primary-light: #d9b5e7;
+  --color-primary-dark: #4f2db1;
+  --color-primary-light: #32b8fa;
 
   --color-secondary-dark: color-mix(
     in srgb,
@@ -93,7 +93,7 @@ html[data-theme='dark'] {
 * {
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: var(--size-xs);
   color: var(--color-foreground);
   line-height: 1;
   transition: background 0.5s ease;
