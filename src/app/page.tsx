@@ -25,6 +25,10 @@ export default function Landing() {
             href='/'
             button
           />
+        </>
+      }
+      modalItems={
+        <>
           <Theme />
         </>
       }
