@@ -13,7 +13,7 @@
 
 .TriggerOff,
 .TriggerOn {
-  background-color: var(--color-foreground);
+  background-color: var(--color-primary);
   padding: 6px;
   border-radius: 10px;
   cursor: pointer;
