@@ -23,7 +23,7 @@
 
 @media (min-width: 769px) {
   .Dashboard {
-    grid-area: 1/2/2/3;
+    grid-area: 2/2/3/3;
   }
 }
 
