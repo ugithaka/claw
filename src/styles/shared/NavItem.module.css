@@ -23,7 +23,7 @@
 }
 
 .Button {
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
   color: var(--color-background);
   padding: 6px;
   border-radius: 10px;
