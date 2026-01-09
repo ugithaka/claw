@@ -33,7 +33,7 @@
     gap: var(--size-xl);
     overflow-y: auto;
     background-color: var(--color-secondary);
-    height: calc(100vh - var(--size-xl));
+    height: calc(100vh - var(--size-xl) - var(--size-xl) - var(--size-xl));
     backdrop-filter: blur(var(--size-xs));
   }
 }
