@@ -1,3 +1,4 @@
+export { default as Aside } from '@/components/layout/Aside';
 export { default as Container } from '@/components/layout/Container';
 export { default as Footer } from '@/components/layout/Footer';
 export { default as Header } from '@/components/layout/Header';
