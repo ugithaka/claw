@@ -1,10 +1,10 @@
 import NavItem from '@/components/shared/NavItem';
 import Theme from '@/components/shared/Theme';
-import { Page } from '@components/page';
+import { Dashboard } from '@components/page';
 
 export default function Landing() {
   return (
-    <Page
+    <Dashboard
       navItems={
         <>
           <NavItem
