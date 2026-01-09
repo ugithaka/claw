@@ -19,10 +19,11 @@
 
 .Active {
   font-weight: 700;
+  color: var(--color-primary);
 }
 
 .Button {
-  background-color: var(--color-foreground);
+  background-color: var(--color-primary);
   color: var(--color-background);
   padding: 6px;
   border-radius: 10px;
@@ -32,7 +33,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 8px;
+  gap: var(--size-2xs);
 }
 
 .Icon,
@@ -43,7 +44,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 16px;
+  gap: var(--size-xs);
 }
 
 .IconActive {
