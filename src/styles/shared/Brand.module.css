@@ -1,0 +1,13 @@
+.Brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--size-xs);
+}
+
+.Brand p {
+  font-size: var(--size-sm);
+  font-weight: 700;
+  /* color: var(--color-primary); */
+}
