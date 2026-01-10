@@ -1,0 +1,88 @@
+.Header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0px;
+  gap: var(--size-md);
+  z-index: 999;
+  height: var(--size-xl);
+}
+
+.Header::after {
+  content: '';
+  display: block;
+  z-index: -1;
+  width: 100%;
+  height: var(--size-xl);
+  background-color: var(--color-secondary);
+  backdrop-filter: blur(var(--size-xs));
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-bottom: 1px solid var(--color-highlight);
+}
+
+.Dashboard::after {
+  background-color: var(--color-transparent);
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .Dashboard {
+    grid-area: 1/1/2/2;
+    padding-inline: var(--size-xs);
+  }
+
+  .Page {
+    padding-inline: var(--size-xs);
+    width: calc(100% - var(--size-md));
+  }
+}
+
+@media (min-width: 769px) {
+  .Dashboard {
+    grid-area: 1/2/2/3;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1536px) {
+  .Dashboard {
+    padding-inline-end: var(--size-md);
+    padding-inline-start: var(--size-xs);
+  }
+
+  .Page {
+    padding-inline: var(--size-md);
+    width: calc(100% - var(--size-xl));
+  }
+}
+
+@media (min-width: 1537px) and (max-width: 2303px) {
+  .Dashboard {
+    padding-inline-end: var(--size-xl);
+    padding-inline-start: var(--size-xs);
+  }
+
+  .Page {
+    padding-inline: var(--size-xl);
+    width: calc(100% - var(--size-3xl));
+  }
+}
+
+@media (min-width: 2304px) {
+  :root {
+    --bleed: max(0px, (100vw - 2304px) / 2);
+  }
+
+  .Dashboard {
+    padding-inline-end: calc(var(--size-3xl) + var(--bleed));
+    padding-inline-start: var(--size-xs);
+  }
+
+  .Page {
+    padding-inline: calc(var(--size-3xl) + var(--bleed));
+    width: calc(100% - (var(--size-3xl) * 2) - (var(--bleed) * 2));
+  }
+}

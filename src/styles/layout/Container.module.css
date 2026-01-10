@@ -1,0 +1,10 @@
+.Container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
+  padding-block: var(--size-xl);
+  gap: var(--size-xl);
+  overflow-x: hidden;
+}
